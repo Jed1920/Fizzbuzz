@@ -19,14 +19,19 @@ public class Main {
                 a = "Bong";
             }
             if (x % 13 == 0) {
-                String b = "";
-                b = "Fezz";
-
+                int firstB = a.indexOf("B");
+                if (firstB == -1) {
+                    a += "Fezz";
+                } else {
+                    String b = a.substring(0, firstB) + "Fezz" + a.substring(firstB);
+                    a = b;
+                }
             }
             if (a.isEmpty()) {
                 a += x;
             }
             System.out.println(a);
+
         }
     }
 }
